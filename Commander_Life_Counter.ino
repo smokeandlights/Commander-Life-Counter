@@ -7,20 +7,44 @@ LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 BigNumbers bigNum(&lcd);
 
 int LifeTtl = 40;
-int CmdrScott = 0;
-int CmdrHarber = 1;
-int CmdrBarnett = 2;
-int CmdrDoc = 3;
-int Ctr1 = 4;
-int Ctr2 = 5;
-int Treasure = 6;
-int Poison = 7;
 
-int modeVar[9] {LifeTtl, CmdrScott, CmdrHarber, CmdrBarnett, CmdrDoc, Ctr1, Ctr2, Treasure, Poison};
+String Cmdr0LabelLine1 = "Scott";
+String Cmdr0LabelLine2 = "CMDR DMG";
+int Cmdr0 = 0;
+
+String Cmdr1LabelLine1 = "Harber";
+String Cmdr1LabelLine2 = "CMDR DMG";
+int Cmdr1 = 1;
+
+String Cmdr2LabelLine1 = "Barnett";
+String Cmdr2LabelLine2 = "CMDR DMG";
+int Cmdr2 = 2;
+
+String Cmdr3LabelLine1 = "Doc";
+String Cmdr3LabelLine2 = "CMDR DMG";
+int Cmdr3 = 3;
+
+String Ctr1LabelLine1 = "Counter";
+String Ctr1LabelLine2 = "   1";
+int Ctr1 = 4;
+
+String Ctr2LabelLine1 = "Counter";
+String Ctr2LabelLine2 = "   2";
+int Ctr2 = 5;
+
+String Ctr3LabelLine1 = "Treasure";
+String Ctr3LabelLine2 = " Tokens";
+int Ctr3 = 6;
+
+String Ctr4LabelLine1 = " Poison";
+String Ctr4LabelLine2 = "Counters";
+int Ctr4 = 7;
+
+int modeVar[9] {LifeTtl, Cmdr0, Cmdr1, Cmdr2, Cmdr3, Ctr1, Ctr2, Ctr3, Ctr4};
 int modeBigNumPos[9] {9, 10, 10, 10, 10, 9, 9, 9, 11};
-int modeBigNumPlaces[9] {3, 2, 2, 2, 2, 2, 2, 3, 2};
-String modeLabelLine1[9] {"Life", "Scott", "Harber", "Barnett", "Doc", "Counter", "Counter", "Treasure", "Poison"};
-String modeLabelLine2[9] {"Total", "CMDR DMG", "CMDR DMG", "CMDR DMG", "CMDR DMG", "1", "2", "Tokens", "Counters"};
+int modeBigNumPlaces[9] {3, 2, 2, 2, 2, 3, 3, 3, 2};
+String modeLabelLine1[9] {"Life", Cmdr0LabelLine1, Cmdr1LabelLine1, Cmdr2LabelLine1, Cmdr3LabelLine1, Ctr1LabelLine1, Ctr2LabelLine1, Ctr3LabelLine1, Ctr4LabelLine1};
+String modeLabelLine2[9] {"Total", Cmdr0LabelLine2, Cmdr1LabelLine2, Cmdr2LabelLine2, Cmdr3LabelLine2, Ctr1LabelLine2, Ctr2LabelLine2, Ctr3LabelLine2, Ctr4LabelLine2};
 
 
 byte scratch ;
@@ -48,7 +72,7 @@ void loop() {
   Serial.println(modeVar[mode]);
 #endif
 
-  
+
   scratch = modeVar[mode];
   lcd.setCursor(0, 0);
   lcd.print(modeLabelLine1[mode]);
