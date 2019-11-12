@@ -3,6 +3,7 @@ A digital display for Magic the Gathering using an Arduino Uno and a common LCDK
 This does not work yet. Please come back later.
 
 Controls will be:
+
 Select: Switch increment between 1 and 10. Long press: reset current counter.
 
 Left:   Display last counter.
